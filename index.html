@@ -151,6 +151,91 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-java-stream" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/08/java-stream/">java-stream,Optional</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/08/java-stream/" class="archive-article-date">
+  	<time datetime="2020-12-08T02:02:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="java-stream"><a href="#java-stream" class="headerlink" title="java-stream"></a>java-stream</h1><h1 id="Optional类"><a href="#Optional类" class="headerlink" title="Optional类"></a>Optional类</h1><blockquote>
+<p>Optional 是个容器：它可以保存类型T(&lt;&gt;里的)的值，或者仅仅保存null</p>
+</blockquote>
+<h3 id="常用的方法"><a href="#常用的方法" class="headerlink" title="常用的方法"></a>常用的方法</h3><ol>
+<li><p>static <T> Optional<T> ofNullable(T value)</p>
+<p>静态方法，允许传入null或者T</p>
+</li>
+<li><p>static <T> Optional<T> of(T value)</p>
+<p>静态方法，只允许传入T， 不允许传入null，传入null会抛出异常</p>
+</li>
+<li><p>boolean isPresent()</p>
+<p>如果值存在则方法会返回true，否则返回 false</p>
+</li>
+<li><p>T orElse(T other)</p>
+<p>如果Optional中包含值，返回相应的值，否则返回other值</p>
+</li>
+<li><p>T get()</p>
+<p>如果Optional中包含值，返回值，否则抛出异常 </p>
+</li>
+</ol>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> test;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.util.Optional;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Optional&lt;Integer&gt; num1 = Optional.ofNullable(<span class="keyword">null</span>);</span><br><span class="line">        Optional&lt;Integer&gt; num2 = Optional.of(<span class="number">5</span>);</span><br><span class="line">        System.out.println(Test.sum(num1, num2));</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Integer <span class="title">sum</span><span class="params">(Optional&lt;Integer&gt; num1, Optional&lt;Integer&gt; num2)</span> </span>&#123;</span><br><span class="line">        System.out.println(num1.isPresent());</span><br><span class="line">        System.out.println(num2.isPresent());</span><br><span class="line">        Integer value1 = num1.orElse(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> value1 + num2.get();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>![](/home/mi/图片/Screenshot from 2020-12-08 16-06-48.png)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/08/java-stream/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-markdown" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
